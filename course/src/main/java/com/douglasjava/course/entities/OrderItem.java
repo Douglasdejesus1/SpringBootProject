@@ -16,6 +16,7 @@ public class OrderItem implements Serializable {
 	
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
+	
 	private Integer quantity;
 	private Double price;
 
@@ -38,7 +39,7 @@ public class OrderItem implements Serializable {
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-
+	@JsonIgnore
 	public Product getProduct() {
 		return id.getProduct();
 	}
